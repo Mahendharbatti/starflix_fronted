@@ -1,0 +1,170 @@
+.moviepage {
+  background-color: #020d18;
+  padding: 50px 7%;
+}
+
+ .moviesheading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 6%;
+}
+
+.moviesheading h1 {
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.moviepage .totalmovies {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
+  margin-bottom: 50px;
+}
+
+.moviepage .totalmovies .foundtotal {
+  display: flex;
+  padding: 6px;
+  padding-right: 16px;
+  flex: 2 1;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.673);
+
+  border-right: 1px solid white;
+  margin: 0px;
+}
+
+.foundtotal span {
+  color: rgb(67, 142, 255);
+}
+
+.moviepage .totalmovies form,
+.totalmovies select,
+.totalmovies select option {
+  border: none;
+  padding: 5px;
+  background-color: #020d18;
+  color: rgba(255, 255, 255, 0.695);
+}
+
+/*cards*/
+
+.allcards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1em;
+}
+
+.movie-card {
+  color: white;
+  text-align: center;
+
+}
+
+.movie-card:hover {
+  color: #fead07;
+
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  display: block;
+}
+
+
+.movie-card h5 {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hover-container {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* semi-transparent black */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hover-button {
+  padding: 10px 20px;
+  font-weight: bolder;
+  color: white;
+  cursor: pointer;
+  background-color: #17a2b8;
+  border: none;
+  border-radius: 25px;
+}
+
+.hover-container:hover .overlay {
+  opacity: 1;
+  /* show overlay and button on hover */
+}
+
+
+@media screen and (max-width:767.90px) {
+  .moviepage .totalmovies {
+    flex-direction: column;
+    border: none;
+
+  }
+  .moviepage .totalmovies .foundtotal {
+  flex-direction: column;
+  align-items: center;
+  border-right: none;
+  margin: 0px;
+  font-size: 14px;
+  padding: 0px;
+}
+.totalmovies select,
+.totalmovies select option {
+  border: 1px solid white;
+}
+
+.allcards {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  
+}
+.movie-card img {
+  height: 200px;
+}
+
+}
+
+@media screen and (min-width:768px) and (max-width:992.90px) {
+
+
+.allcards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  
+}
+.movie-card img {
+  height: 250px;
+
+}
+
+}
