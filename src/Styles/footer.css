@@ -11,6 +11,9 @@
     color: white;
     margin: 0;
 }
+.footer p{
+    color: white;
+}
 
 .back-to-top {
     background: none;

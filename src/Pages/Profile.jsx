@@ -34,7 +34,7 @@ function Profile() {
         const fetchProfile = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('http://localhost:8000/api/profile/', {
+                const response = await axios.get('https://starflix-backend-x0qc.onrender.com/api/profile/', {
                     headers: { Authorization: `Token ${token}` }
                 });
                 setUser(response.data);
@@ -56,44 +56,7 @@ function Profile() {
         }
     }, [token, navigate]);
 
-    // const handleSave = async () => {
-    //     try {
-    //         setLoading(true);
-    //         setMessage('');
-    //         setError('');
 
-    //         const formData = new FormData();
-    //         formData.append('username', user.username);
-    //         formData.append('email', user.email);
-    //         formData.append('fname', user.fname);
-    //         formData.append('lastname', user.lastname);
-    //         formData.append('country', user.country);
-    //         formData.append('state', user.state);
-
-    //         if (user.profile_image instanceof File) {
-    //             formData.append('profile_image', user.profile_image);
-    //         }
-
-    //         const response = await axios.put(
-    //             'http://localhost:8000/api/profile/',
-    //             formData,
-    //             {
-    //                 headers: {
-    //                     Authorization: `Token ${token}`,
-    //                     'Content-Type': 'multipart/form-data'
-    //                 }
-    //             }
-    //         );
-
-    //         setUser(response.data);
-    //         setMessage('Profile updated successfully!');
-    //     } catch (error) {
-    //         console.error('Save failed', error.response?.data || error.message);
-    //         setError(error.response?.data?.error || 'Failed to update profile');
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
 
     const handleSave = async (e) => {
     e.preventDefault();
@@ -115,7 +78,7 @@ function Profile() {
         }
 
         const response = await axios.put(
-            'http://localhost:8000/api/profile/',
+            'https://starflix-backend-x0qc.onrender.com/api/profile/',
             formData,
             {
                 headers: {
@@ -147,7 +110,7 @@ function Profile() {
             setMessage('');
             setError('');
 
-            await axios.post('http://localhost:8000/api/change-password/',
+            await axios.post('https://starflix-backend-x0qc.onrender.com/api/change-password/',
                 passwordData,
                 {
                     headers: { Authorization: `Token ${token}` }

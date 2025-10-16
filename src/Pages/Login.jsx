@@ -12,7 +12,7 @@ function Login({ setToken }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/api/login/', credentials, {
+            const response = await axios.post('https://starflix-backend-x0qc.onrender.com/api/login/', credentials, {
                 headers: { 'Content-Type': 'application/json' }
             });
             localStorage.setItem('token', response.data.token);

@@ -14,7 +14,7 @@ const Header = () => {
 
     const fetchProfile = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/api/profile/', {
+            const response = await axios.get('https://starflix-backend-x0qc.onrender.com/api/profile/', {
                 headers: { Authorization: `Token ${token}` }
             });
             setUser(response.data);
