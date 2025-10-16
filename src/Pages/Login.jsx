@@ -68,7 +68,7 @@ function Login({ setToken }) {
                                 </div>
                                 <div className="modal-footer justify-content-center border-0">
                                     <small>
-                                        <a href="/signup">Sign up</a> • 
+                                        <a href="/login/signup">Sign up</a> • 
                                         {/* <a href="#">Forgot password?</a> */}
                                     </small>
                                 </div>
