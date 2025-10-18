@@ -1,16 +1,24 @@
+
+
 import axios from 'axios';
 import '../Styles/login.css';
 import '../Styles/common.css';
-
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { Modal } from 'bootstrap';
+
 
 function Login({ setToken }) {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const navigate = useNavigate();
+
+  // ✅ Redirect if already logged in
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/home');
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +40,6 @@ function Login({ setToken }) {
 
   return (
     <div>
-      {/* Banner Section */}
       <section className="banner" style={{ backgroundImage: "url('/images/banner.png')" }}>
         <div className="banner-content">
           <img src="/images/logo.png" alt="logo" width="200px" />
@@ -40,9 +47,8 @@ function Login({ setToken }) {
           <h1 className="banner-head">movies, series, and more.</h1>
           <p>All your favorites in one place. Start watching now.</p>
 
-          {/* Login Button */}
           <a
-            href=""
+            href="#"
             className="btn-login"
             data-bs-toggle="modal"
             data-bs-target="#loginModal"
@@ -100,11 +106,7 @@ function Login({ setToken }) {
                       />
                     </div>
                     <br />
-                    <button
-                      type="submit"
-                      className="btn w-100"
-                      data-bs-dismiss="modal"
-                    >
+                    <button type="submit" className="btn w-100" data-bs-dismiss="modal">
                       <b>LOGIN</b>
                     </button>
                   </form>
@@ -112,29 +114,7 @@ function Login({ setToken }) {
 
                 <div className="modal-footer justify-content-center border-0">
                   <small>
-                    <Link
-                      to="/signup"
-                      onClick={(e) => {
-                        e.preventDefault(); // prevent immediate navigation
-                        const modalElement = document.getElementById('loginModal');
-                        const modalInstance =
-                          Modal.getInstance(modalElement) || new Modal(modalElement);
-
-                        if (modalInstance) modalInstance.hide();
-
-                        // Wait for the closing animation to finish
-                        setTimeout(() => {
-                          document
-                            .querySelectorAll('.modal-backdrop')
-                            .forEach((el) => el.remove());
-                          document.body.classList.remove('modal-open');
-                          document.body.style = '';
-                          navigate('/signup'); // navigate after modal closes
-                        }, 300);
-                      }}
-                    >
-                      Sign up
-                    </Link>
+                     <a href="/signup">Sign up</a>
                   </small>
                 </div>
               </div>
