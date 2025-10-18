@@ -47,7 +47,7 @@ const Signup = () => {
             <section className='profilepage'>
                 <div className="form-container">
                     <div className='sign-logo' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' }}>
-                        <img src="/images/logo.png" alt="logo" width='200px' />
+                        <img src="/images/logo.png" alt="logo" width='180px' />
                     </div>
                     <h4>SIGN UP</h4>
 

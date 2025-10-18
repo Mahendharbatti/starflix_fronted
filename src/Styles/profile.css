@@ -153,7 +153,17 @@
 /* Responsive Adjustments */
 @media (max-width: 767px) {
   .profilepage {
-    padding: 40px 30px;
+    padding: 16px;
+  }
+  
+  .form-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 1.5em;
+  }
+
+  .signup-form input {
+    font-size: 16px; /* Prevents mobile zoom on input focus */
   }
 
   .profile-text {
@@ -176,6 +186,7 @@
   .profilepage {
     padding: 40px 60px;
   }
+
 
   .profile-text {
     flex-direction: column;
