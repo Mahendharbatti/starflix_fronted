@@ -42,7 +42,7 @@ function App() {
           <Route path='/popular' element={ <Newpopular />}></Route>
           <Route path='/profile' element={ <Profile  /> }></Route>
 
-          <Route path='/login/signup' element={ <Signup  /> }></Route>
+          <Route path='/signup' element={ <Signup  /> }></Route>
 
           <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
